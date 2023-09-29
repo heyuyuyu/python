@@ -1,8 +1,10 @@
 import os
 
-from util import inscricao, conexao_base, listagem
+from util import inscricao, conexao_base, listagem, entrada, saida
 
 lista_inscritos = [] #guardar a matrícula
+lista_entrada = [] #guardar a entrada
+lista_saida = [] #guardar a saida
 conexao_base(lista_inscritos)
 
 while (True):
@@ -26,9 +28,11 @@ while (True):
     elif op == '3':
         print('Entrada')
         #chamar o metodo de entrada no evento
+        entrada(lista_entrada)
     elif op == '4':
         print('Saída')
         #chamar o metodo de saida do evento
+        saida(lista_saida)
     elif op == '5':
         print('Obrigado por usar o sistema')
         break
