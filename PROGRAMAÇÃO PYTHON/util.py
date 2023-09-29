@@ -32,3 +32,14 @@ def listagem():
         leitor.close()
     except:
         print('Sem inscrições até o momento')
+
+def entrada():
+    print("Escolha um dos escritos para entrar no evento: ")
+    entrada.insert()
+
+    
+
+def saida():
+    print("Escolha um dos inscritos para sair do evento:")
+    saida.del()
+
