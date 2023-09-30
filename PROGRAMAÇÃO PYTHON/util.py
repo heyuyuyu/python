@@ -34,7 +34,7 @@ def listagem():
         print('Sem inscrições até o momento')
 
 def entrada():
-    print("Escolha um dos escritos para entrar no evento: ")
+    print("Escolha um dos inscritos para entrar no evento: ")
     entrada.insert()
 
     
