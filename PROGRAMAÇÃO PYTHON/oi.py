@@ -1,6 +1,8 @@
 import os
 
-from util import inscricao, conexao_base, listagem, entrada, saida
+#oigab
+
+from util import inscricao, conexao_base, listagem, entrar, sair
 
 lista_inscritos = [] #guardar a matrícula
 lista_entrada = [] #guardar a entrada
@@ -27,12 +29,34 @@ while (True):
         listagem()
     elif op == '3':
         print('Entrada')
-        #chamar o metodo de entrada no evento
-        entrada(lista_entrada)
+        matricula_selecionada = input('Digite a matricula para entrar no evento: ')
+        leitor = open('inscricoes.dat')
+
+        for linha in leitor:
+            matricula = linha.split(';')[0]
+            
+            if matricula == matricula_selecionada:
+                # chamar o metodo de entrada no evento
+                entrar(lista_entrada, linha)
+                print('\n Lista Entrada: \n', lista_entrada)
+                
+        leitor.close()
+       
     elif op == '4':
         print('Saída')
-        #chamar o metodo de saida do evento
-        saida(lista_saida)
+        matricula_selecionada = input('Digite a matricula para sair do evento: ')
+        leitor = open('inscricoes.dat')
+
+        for linha in leitor:
+            matricula = linha.split(';')[0]
+
+            if matricula == matricula_selecionada:
+                #chamar o metodo de saida do evento
+                sair(lista_entrada, linha)
+                print('\n Lista Saida: \n', lista_entrada)
+
+        leitor.close()
+
     elif op == '5':
         print('Obrigado por usar o sistema')
         break
