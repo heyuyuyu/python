@@ -8,6 +8,7 @@ def conexao_base(lista):
     except:
         pass
 
+
 def inscricao(lista):
     matricula = input('Informe matrícula: ')
     if matricula in lista:
@@ -19,8 +20,9 @@ def inscricao(lista):
         email = input('Email: ')
         email = email.lower()
         escritor = open('inscricoes.dat','a')
-        escritor.write(matricula + ';' + nome + ';' + email + '\n')
+        escritor.write(matricula + ';' + nome + ';' + email + ';')
         escritor.close()
+
 
 def listagem():
     try:
@@ -32,3 +34,10 @@ def listagem():
         leitor.close()
     except:
         print('Sem inscrições até o momento')
+
+
+def entrar(lista_entrada, inscricao):
+    lista_entrada.append(inscricao)
+    
+def sair(lista_saida, inscricao):
+    lista_saida.remove(inscricao)
