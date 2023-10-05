@@ -1,6 +1,5 @@
 import os
 
-#oigab
 
 from util import inscricao, conexao_base, listagem, entrar, sair
 
